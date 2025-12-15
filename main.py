@@ -1,5 +1,3 @@
-FILEPATH
-
 from Functions import *
 import time
 
