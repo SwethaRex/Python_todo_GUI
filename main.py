@@ -12,7 +12,7 @@ while True:
         todos = get_todos("Files/todos.txt")
 
         todos.append(todo)
-        write_todos("Files/todos.txt", todos)
+        write_todos( todos, "Files/todos.txt")
     elif user_action.startswith('show'):
         todos = get_todos("Files/todos.txt")
 
@@ -29,7 +29,7 @@ while True:
             todos = get_todos("Files/todos.txt")
             new_todo = input("Enter the new todo: ")
             todos[number] = new_todo+'\n'
-            write_todos("Files/todos.txt", todos)
+            write_todos( todos, "Files/todos.txt")
         except ValueError:
             print("your command is not valid")
             continue
@@ -39,7 +39,7 @@ while True:
             todos = get_todos("Files/todos.txt")
             todoToRemove = todos[number-1].strip('\n')
             todos.pop(number-1)
-            write_todos("Files/todos.txt", todos)
+            write_todos( todos, "Files/todos.txt")
             print(f"Todo {todoToRemove} has been removed")
         except IndexError:
             print("There is no item with that number")
